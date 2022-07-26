@@ -1,0 +1,12 @@
+!.gitignore
+/.phpcs-cache
+/.phpdoc
+/.phpunit.result.cache
+/.vscode
+/clover.xml
+/coveralls-upload.json
+/phpunit.xml
+/vendor/
+/composer.lock
+/node_modules/
+/package-lock.json

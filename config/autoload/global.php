@@ -1,0 +1,52 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'config_cache_enabled' => true,
+    'crawler' => [
+        'extension' => 'csv',
+        'filename' => 'list',
+        'timeout' => '3 hours', // DateTime; Lock timeout
+        'try_again' => 3, // Number of times
+        'try_again_delay' => 400, // [ms]
+    ],
+    'duplicates' => [
+        'delay' => 3, // [ms]
+        'description_length' => 500,
+        'description_score' => 95,
+        'description_short_length' => 100,
+        'limit' => 15000,
+        'name_length' => 50,
+        'name_score' => 95,
+        'timeout' => '15 minutes', // DateTime; Session timeout
+        'transaction_size' => 500,
+    ],
+    'logger' => [
+        'extension' => 'log',
+        'filename' => 'error',
+        'storage_path' => getcwd().'/data/logs/',
+    ],
+    'page_size' => 15,
+    'scanner' => [
+        'compare' => 'db_dump.json', // Actual database dump to compare last update
+        'extension' => 'lock', // To mark files to be processed
+        'limit' => 100, // Number of files to process in one cycle
+        'list_file' => 'list-file.json',
+        /**
+         * Important:
+         * `timeout` must be set in conjunction with `limit`
+         */
+        'timeout' => '15 minutes', // DateTime; Lock timeout
+    ],
+    'writer' => [
+        'extension' => 'html',
+        'filename_prefix' => 'start',
+        'id_prefix' => 'id',
+        'storage_path' => getcwd().'/data/tmp/',
+    ],
+    'permissions' => [
+        'directory' => '0770',
+        'file' => '0660',
+    ],
+];

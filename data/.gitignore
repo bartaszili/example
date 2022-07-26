@@ -1,0 +1,13 @@
+*
+!.gitignore
+!/cache
+!/cache/.gitignore
+!/datasets
+!/datasets/.gitignore
+!/logs
+!/logs/.gitignore
+!/migrations
+!/migrations/.gitignore
+!/tmp
+!/tmp/.gitignore
+!*.*
